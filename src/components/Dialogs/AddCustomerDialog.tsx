@@ -32,7 +32,7 @@ const AddCustomerDialog = () => {
           <div className="w-[19px] h-[19px] rounded-full bg-[#FFF] text-[#000] text-[16px] flex items-center justify-center">
             +
           </div>
-          ADD Customers
+          <span className="text-[#fff]">ADD Customers</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[720px] p-0 !rounded-none">
@@ -92,7 +92,7 @@ const AddCustomerDialog = () => {
                   htmlFor="airplane-mode"
                   className="font-Poppins font-[400] text-[13px] text-[#666] leading-[normal]"
                 >
-                  Airplane Mode
+                  Add Address
                 </Label>
                 <Switch
                   id="airplane-mode"

@@ -10,7 +10,6 @@ import { Calendar } from "@/components/ui/calendar";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -31,6 +30,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import UserIcon from "@/assets/Icons/user.svg";
+import EditUserIcon from "@/assets/Icons/editUser.svg";
 
 const FormSchema = z.object({
   dob: z.date({
@@ -61,6 +62,24 @@ const AccountPage = () => {
         </h2>
       </div>
       <div className="shadow-boxdropshadow py-[47px] px-[50px] rounded-[10px] max-w-[720px] w-full">
+        <div className="flex items-center mb-[30px]">
+          <div className="relative">
+            <img src={UserIcon} alt="UserIcon" />
+            <img
+              src={EditUserIcon}
+              alt="EditUserIcon"
+              className="absolute bottom-[1px] right-0 cursor-pointer"
+            />
+          </div>
+          <div className="ml-[20px]">
+            <div className="font-Poppins text-base font-semibold text-[#000000B2] leading-[15px] mb-[7px]">
+              John deo
+            </div>
+            <div className="text-[15px] text-[#000000B2] leading-[15px] font-Poppins">
+              johndeo@gmail.com
+            </div>
+          </div>
+        </div>
         <div className="flex items-center gap-[15px]">
           <div className="w-[50%]">
             <Label
@@ -236,7 +255,7 @@ const AccountPage = () => {
           </div>
         </div>
         <div className="mt-[30px]">
-          <Button className="py-[7px] w-full rounded-[5px] h-auto font-Poppins font-[600] text-[18px] leading-[normal] tracking-[0.27px]">
+          <Button className="py-[7px] w-full rounded-[5px] h-auto font-Poppins text-[#fff] font-[500] text-[16px] leading-[normal] tracking-[0.27px]">
             Update profile
           </Button>
         </div>

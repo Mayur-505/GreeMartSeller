@@ -6,7 +6,7 @@ import InputWithLabel from "../common/InputWithLabel";
 const SignInForm = () => {
   return (
     <div className="flex items-center justify-center h-[calc(100vh-108px)]">
-      <div className="shadow-custom w-full max-w-[560px] rounded-[13px] p-5 md:px-[49px] md:pb-[35px] md:pt-[50px]">
+      <div className="shadow-custom w-full max-w-[560px] rounded-[13px] p-5 md:px-[49px] md:pb-[35px] md:pt-[50px] bg-[#fff]">
         <div>
           <h4 className="mb-[15px] font-Poppins text-xl font-medium text-primary_text md:mb-[30px] md:text-[26px]">
             Sign in

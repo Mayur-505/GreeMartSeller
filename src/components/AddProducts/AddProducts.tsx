@@ -18,15 +18,14 @@ import { Textarea } from "../ui/textarea";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
-  TableFooter,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
 const AddProducts = () => {
+  const [tabs, setTabs] = useState("Basicsettings");
   const [value, setValue] = useState(
     "Fill in a striking short desciption of the product (displayed on product page and product list as abstract for customers and search engines For detailed informations use the ‘description tob"
   );
@@ -49,41 +48,71 @@ const AddProducts = () => {
         <TabsList className="w-full bg-transparent p-0 justify-start">
           <TabsTrigger
             value="Basicsettings"
-            className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+            onClick={() => setTabs("Basicsettings")}
+            className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+              tabs == "Basicsettings" && "border-t-[3px] border-[#17AEC9]"
+            }`}
           >
             Basic settings
           </TabsTrigger>
           <TabsTrigger
             value="Quantities"
-            className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+            onClick={() => setTabs("Quantities")}
+            className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+              tabs == "Quantities" && "border-t-[3px] border-[#17AEC9]"
+            }`}
           >
             Quantities
           </TabsTrigger>
           <TabsTrigger
             value="Shipping"
-            className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+            onClick={() => setTabs("Shipping")}
+            className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+              tabs == "Shipping" && "border-t-[3px] border-[#17AEC9]"
+            }`}
           >
             Shipping
           </TabsTrigger>
           <TabsTrigger
             value="Pricing"
-            className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+            onClick={() => setTabs("Pricing")}
+            className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+              tabs == "Pricing" && "border-t-[3px] border-[#17AEC9]"
+            }`}
           >
             Pricing
           </TabsTrigger>
           <TabsTrigger
             value="SEO"
-            className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+            onClick={() => setTabs("SEO")}
+            className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+              tabs == "SEO" && "border-t-[3px] border-[#17AEC9]"
+            }`}
           >
             SEO
           </TabsTrigger>
           <TabsTrigger
             value="Options"
-            className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+            onClick={() => setTabs("Options")}
+            className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] mr-[30px] ${
+              tabs == "Options" && "border-t-[3px] border-[#17AEC9] "
+            }`}
           >
             Options
           </TabsTrigger>
+          <div className="max-w-[313px] h-[36px] relative">
+            <Input
+              placeholder="Enter your product name"
+              className="rounded-[50px] font-Nunito font-[400] text-[17px] leading-[20px] text-[#7E7E7E] shadow-boxdropshadow pl-[48px]"
+            />
+            <img
+              src={searchIcon}
+              alt="searchIcon"
+              className="absolute top-[12px] left-[23px]"
+            />
+          </div>
         </TabsList>
+
         <TabsContent
           value="Basicsettings"
           className="bg-[#FFF] mt-[7px] relative z-10 p-[40px]"
@@ -752,17 +781,11 @@ const AddProducts = () => {
                     />
                   </div>
                 </div>
-                <div className="max-w-[221px]">
-                  <Label className="font-Poppins block pb-[5px] text-[14px] font-[500] leading-[normal] tracking-[0.21px] text-[#000000B2]">
-                    Price(tax incl.)
-                  </Label>
+                <div className="max-w-[221px] mt-[25px]">
                   <div className="flex items-center border-[1px] border-solid border-[#0000004D] rounded-[1px]">
-                    <p className="p-[12px] border-r-[1px] border-solid border-[#0000004D]">
-                      <img src={texIcon} alt="texIcon" />
-                    </p>
                     <Input
                       className="border-transparent font-Poppins text-[12px] font-[500] leading-[19px] tracking-[0.24px]"
-                      placeholder="23.9"
+                      placeholder="Per kilo, per litre "
                     />
                   </div>
                 </div>

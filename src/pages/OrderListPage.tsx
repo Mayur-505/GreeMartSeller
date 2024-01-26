@@ -115,7 +115,7 @@ const OrderListPage = () => {
         <div className="px-[50px] border-b-[1px] border-solid border-[#C0C0C0] pb-[19px]">
           <div className="flex justify-between items-center">
             <h2 className="font-Poppins font-[600] text-[22px] text-[#454D4A] tracking-[0.24px] leading-[normal]">
-              Customers
+              Order List
             </h2>
           </div>
           <div className="flex gap-[36px] items-center pt-[25px]">
@@ -230,7 +230,7 @@ const OrderListPage = () => {
                 </button>
               </div>
             </div>
-            <Button className="flex gap-[10px] px-[15px] py-[6px] h-auto font-Inter text-[15px] font-[600] leading-[normal] items-center">
+            <Button className="flex gap-[10px] text-[#fff] px-[15px] py-[6px] h-auto font-Inter text-[15px] font-[500] leading-[normal] items-center">
               Download All Orders <img src={downLoadIcon} alt="downLoadIcon" />
             </Button>
           </div>
