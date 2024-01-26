@@ -163,7 +163,7 @@ const AddProducts = () => {
                   </div>
                   Add a brand
                 </Button>
-                <Button
+                {/* <Button
                   variant={"outline"}
                   className="flex border-primary border-[1.5px] text-primary rounded-none px-[20px] py-[7px] w-fit  gap-[10px] items-center font-Poppins text-[17px] font-[500] tracking-[0.27px] leading-[normal]"
                 >
@@ -171,7 +171,7 @@ const AddProducts = () => {
                     +
                   </div>
                   Add a related product
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div className="max-w-[383px] w-full">

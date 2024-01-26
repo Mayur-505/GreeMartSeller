@@ -29,7 +29,7 @@ const ProductsListTable = (props: { invoices: InvoicesObject[] }) => {
   return (
     <Table className="border-[1px] border-solid boredr-[#00000026]">
       <TableHeader>
-        <TableRow className="bg-primary hover:bg-primary">
+        <TableRow className="bg-primary hover:bg-primary uppercase">
           <TableHead className="font-Poppins font-[500] text-[20px] flex items-center text-[#FFF] tracking-[0.592px] leading-[normal]">
             <Checkbox className="h-[21px] w-[21px] border-[#FFF] mr-[20px]" />
             ID Code
@@ -38,16 +38,16 @@ const ProductsListTable = (props: { invoices: InvoicesObject[] }) => {
             Product Name
           </TableHead>
           <TableHead className="font-Poppins font-[500] text-[20px] text-[#FFF] tracking-[0.592px] leading-[normal]">
-            Category
+            Inner SubCategory
           </TableHead>
           <TableHead className="font-Poppins font-[500] text-[20px] text-[#FFF] tracking-[0.592px] leading-[normal]">
-            Pieces
+            Quantity
           </TableHead>
           <TableHead className="font-Poppins font-[500] text-[20px] text-[#FFF] tracking-[0.592px] leading-[normal]">
             Prices
           </TableHead>
           <TableHead className="font-Poppins font-[500] text-[20px] text-[#FFF] tracking-[0.592px] leading-[normal]">
-            Stotus
+            Status
           </TableHead>
           <TableHead className="font-Poppins font-[500] text-[20px] text-[#FFF] tracking-[0.592px] leading-[normal]">
             Action
@@ -86,11 +86,9 @@ const ProductsListTable = (props: { invoices: InvoicesObject[] }) => {
             <TableCell className="font-Poppins font-[500] text-[16px] py-[6px] tracking-[0.464px] leading-[23px]">
               <p
                 className={`py-[6px] px-[15px] ${
-                  invoice.stotus === "Deliverd"
-                    ? "bg-[#5BB3ED40] text-[#5BB3ED]"
-                    : invoice.stotus === "Panding"
-                    ? "bg-[#FCBD2240] text-[#5BB3ED]"
-                    : "bg-[#FC222240] text-[#FF2D2D]"
+                  invoice.stotus === "Out of Stock"
+                    ? "bg-[#FF0C0C33] text-[#FF0000B2]"
+                    : "bg-[#1754C933] text-[#000000]"
                 } w-fit rounded-[5px]`}
               >
                 {invoice.stotus}

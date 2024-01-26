@@ -20,7 +20,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
     {
       idcode: "#761324",
@@ -32,7 +32,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
     {
       idcode: "#761324",
@@ -44,7 +44,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
     {
       idcode: "#761324",
@@ -56,7 +56,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
     {
       idcode: "#761324",
@@ -68,7 +68,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
     {
       idcode: "#761324",
@@ -80,7 +80,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "Out of Stock",
     },
     {
       idcode: "#761324",
@@ -92,7 +92,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
     {
       idcode: "#761324",
@@ -104,7 +104,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
     {
       idcode: "#761324",
@@ -116,7 +116,7 @@ const ProductsListPage = () => {
       category: "Camera",
       pieces: "32",
       prices: "$550",
-      stotus: "Stok",
+      stotus: "In Stok",
     },
   ];
   return (
@@ -154,7 +154,9 @@ const ProductsListPage = () => {
             <div className="w-[19px] h-[19px] rounded-full bg-[#FFF] text-[#000] text-[16px] flex items-center justify-center">
               +
             </div>
-            Add new category
+            <span className="text-[18px] font-Poppins text-[#fff]">
+              Add Products
+            </span>
           </Button>
         </div>
       </div>
