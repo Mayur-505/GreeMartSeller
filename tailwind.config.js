@@ -85,6 +85,9 @@ module.exports = {
         Poppins: "Poppins",
       },
     },
+    fontFamily: {
+      Inter: "Inter",
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };

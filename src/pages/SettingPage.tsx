@@ -18,7 +18,7 @@ const SettingPage = () => {
               htmlFor="FirstName"
               className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
             >
-              First Name *
+              First Name <span className="text-[#DB3700]">*</span>
             </Label>
             <Input
               type="text"
@@ -31,7 +31,7 @@ const SettingPage = () => {
               htmlFor="LastName"
               className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
             >
-              Last Name *
+              Last Name <span className="text-[#DB3700]">*</span>
             </Label>
             <Input
               type="text"
@@ -46,7 +46,7 @@ const SettingPage = () => {
               htmlFor="EmailAddress"
               className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
             >
-              Email Address *
+              Email Address <span className="text-[#DB3700]">*</span>
             </Label>
             <Input
               type="email"
@@ -114,7 +114,7 @@ const SettingPage = () => {
             htmlFor="Description"
             className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
           >
-            Your Message
+            <span className="text-[#DB3700]">*</span> Description
           </Label>
           <Textarea
             id="Description"
@@ -123,7 +123,7 @@ const SettingPage = () => {
           />
         </div>
         <div className="flex justify-end mt-[30px]">
-          <Button className="px-[15px] py-[7px] rounded-[5px] h-auto font-Poppins font-[600] text-[18px] leading-[normal] tracking-[0.27px]">
+          <Button className="px-[15px] py-[7px] rounded-[5px] h-auto font-Poppins font-[600] text-[#fff] text-[18px] leading-[normal] tracking-[0.27px]">
             Update Profile
           </Button>
         </div>
@@ -135,7 +135,7 @@ const SettingPage = () => {
               htmlFor="Twitter"
               className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
             >
-              Twitter *
+              Twitter <span className="text-[#DB3700]">*</span>
             </Label>
             <Input
               type="text"
@@ -186,7 +186,7 @@ const SettingPage = () => {
           </div>
         </div>
         <div className="flex justify-end mt-[30px]">
-          <Button className="px-[15px] py-[7px] rounded-[5px] h-auto font-Poppins font-[600] text-[18px] leading-[normal] tracking-[0.27px]">
+          <Button className="px-[15px] py-[7px] rounded-[5px] text-[#fff] h-auto font-Poppins font-[600] text-[18px] leading-[normal] tracking-[0.27px]">
             Change Social Media
           </Button>
         </div>
@@ -195,40 +195,40 @@ const SettingPage = () => {
         <div className="flex items-center gap-[79px] pt-[20px]">
           <div className="max-w-[50%] w-full">
             <Label
-              htmlFor="City"
+              htmlFor="Old Password"
               className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
             >
-              City
+              Old Password <span className="text-[#DB3700]">*</span>
             </Label>
             <Input
               type="text"
-              id="City"
+              id="Old-Password"
               className="focus-visible:ring-offset-[none] border-[#00000066]"
             />
           </div>
           <div className="max-w-[50%] w-full">
             <Label
-              htmlFor="Country"
+              htmlFor="Password"
               className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
             >
-              Country
+              Password
             </Label>
             <Input
               type="text"
-              id="Country"
+              id="Password"
               className="focus-visible:ring-offset-[none] border-[#00000066]"
             />
           </div>
           <div className="max-w-[50%] w-full">
             <Label
-              htmlFor="ZipCode"
+              htmlFor="Confirm-Password"
               className="font-Poppins font-[400] text-[14px] text-[#666] leading-[17px] pb-[5px] inline-block"
             >
-              Zip Code
+              Confirm Password
             </Label>
             <Input
-              type="number"
-              id="ZipCode"
+              type="text"
+              id="Confirm-Password"
               className="focus-visible:ring-offset-[none] border-[#00000066]"
             />
           </div>
@@ -239,8 +239,8 @@ const SettingPage = () => {
           </button>
         </div>
         <div className="flex justify-end mt-[30px]">
-          <Button className="px-[15px] py-[7px] rounded-[5px] h-auto font-Poppins font-[600] text-[18px] leading-[normal] tracking-[0.27px]">
-            Update Profile
+          <Button className="px-[15px] py-[7px] rounded-[5px] h-auto font-Poppins text-[#fff] font-[600] text-[18px] leading-[normal] tracking-[0.27px]">
+            Change Password
           </Button>
         </div>
       </div>

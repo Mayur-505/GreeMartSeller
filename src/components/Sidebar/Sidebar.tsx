@@ -37,7 +37,7 @@ const Sidebar = () => {
               className="flex items-center gap-[15px] pl-[35px] py-[22px]"
             >
               <img src={dashbordLeftIcon} alt="dashbordLeftIcon" />
-              <span>Dashboard</span>
+              <span className="text-[18px] font-Inter">Dashboard</span>
             </Link>
           </li>
           <li
@@ -48,7 +48,7 @@ const Sidebar = () => {
               name="Catalog"
               icon={<img src={categoryLeftIcon} alt="categoryLeftIcon" />}
               mapdata={[
-                "Categorys",
+                "Category",
                 "Attributes & Features",
                 "Brands & Suppliers",
                 "Discounts",

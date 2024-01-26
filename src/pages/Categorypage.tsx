@@ -71,7 +71,9 @@ const Categorypage = () => {
               <div className="w-[19px] h-[19px] rounded-full bg-[#FFF] text-[#000] text-[16px] flex items-center justify-center">
                 +
               </div>
-              Add new category
+              <span className="text-[#fff] text-[18px] font-Poppins font-[600]">
+                Add new category
+              </span>
             </Button>
           </div>
           <div className="flex gap-[36px] items-center pt-[25px]">
