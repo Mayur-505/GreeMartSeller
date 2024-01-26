@@ -54,6 +54,13 @@ module.exports = {
       },
       boxShadow: {
         headshadow: "0px 1px 4px 0px rgba(0, 0, 0, 0.25)",
+        bottomshadow: "0px 3px 0px 0px rgba(0, 0, 0, 0.25)",
+        topshadow: "0px -2px 4px 0px rgba(0, 0, 0, 0.25)",
+        saidbarshadow: "0px 6px 6px 1px rgba(0, 0, 0, 0.25)",
+        inputshadow: "0px 0px 3px 1px rgba(0, 0, 0, 0.25)",
+        dashbordcard: "0px 1px 14px 0px rgba(0, 0, 0, 0.13)",
+        boxdropshadow: "0px 0px 4px rgba(0, 0, 0, 0.25)",
+        selectAllshadow: "0px 1.5px 1.5px 0px rgba(0, 0, 0, 0.25)",
       },
       borderRadius: {
         lg: "var(--radius)",

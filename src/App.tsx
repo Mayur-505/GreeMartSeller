@@ -18,10 +18,13 @@ import AddSubCategories from "./components/AddSubCategories/AddSubCategories";
 import AttributesPage from "./pages/AttributesPage";
 import BrandsPage from "./pages/BrandsPage";
 import DiscountsPage from "./pages/DiscountsPage";
+import ForgetPassword from "./components/auth/ForgetPassword";
+import ResetPassword from "./components/auth/ResetPassword";
+import VerificationCode from "./components/auth/VerificationCode";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/auth",
     element: <RootLayout />,
     children: [
       {
@@ -36,6 +39,24 @@ const router = createBrowserRouter([
         path: "signup",
         element: <SignUpForm />,
       },
+      {
+        path: "forgetpassword",
+        element: <ForgetPassword />,
+      },
+      {
+        path: "resetpassword",
+        element: <ResetPassword />,
+      },
+      {
+        path: "verificode",
+        element: <VerificationCode />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
       {
         path: "/dashboard",
         element: <Dashboard />,
