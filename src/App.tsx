@@ -21,11 +21,12 @@ import DiscountsPage from "./pages/DiscountsPage";
 import ForgetPassword from "./components/auth/ForgetPassword";
 import ResetPassword from "./components/auth/ResetPassword";
 import VerificationCode from "./components/auth/VerificationCode";
+import AuthLayout from "./layouts/AuthLayout";
 
 const router = createBrowserRouter([
   {
     path: "/auth",
-    element: <RootLayout />,
+    element: <AuthLayout />,
     children: [
       {
         path: "verify-gst",
