@@ -262,7 +262,7 @@ const AddProducts = () => {
                       htmlFor=""
                       className="font-Poppins text-[14px] font-[500] pb-[5px] leading-[normal] tracking-[0.21px] text-[#000000B2]"
                     >
-                      Tax excluded
+                      Tax included
                     </Label>
                     <div className="flex items-center border-[1px] border-solid border-[#0000004D] rounded-[5px]">
                       <p className="p-[12px] border-r-[1px] border-solid border-[#0000004D]">
@@ -284,7 +284,7 @@ const AddProducts = () => {
                   </Label>
                   <Input
                     className="border-[#0000004D] font-Poppins text-[12px] font-[500] leading-[19px] tracking-[0.24px]"
-                    placeholder="16.68"
+                    placeholder="FR Taux standard (20%)"
                   />
                   <p className="font-Poppins flex items-center text-[12px] font-[500] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px]">
                     Advanced settings in{" "}
