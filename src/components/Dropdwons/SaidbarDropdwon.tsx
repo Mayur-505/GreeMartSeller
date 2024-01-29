@@ -23,12 +23,13 @@ const SaidbarDropdwon: FC<DropdownFilterProps> = ({
 }) => {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-  const [selectedCategory, setSelectedCategory] = useState("Categorys");
+  const [selectedCategory, setSelectedCategory] = useState("Category");
   const loction = useLocation();
 
   const handelSetRoute = (text: any) => {
     setSelectedCategory(text);
-    if (text == "Categorys") {
+    console.log("text", text);
+    if (text == "Category") {
       navigate("/category");
     }
     if (text == "SubCategory") {
@@ -69,7 +70,7 @@ const SaidbarDropdwon: FC<DropdownFilterProps> = ({
             setOpen(!open),
               navigate("/category"),
               setOpen(!open),
-              setSelectedCategory("Categorys");
+              setSelectedCategory("Category");
           }}
           type="button"
           className={`flex w-full cursor-pointer pr-[25px] pl-[35px] py-[22px] items-center justify-between text-left font-Poppins text-[19px] font-medium text-primary_text ${cssclss}`}

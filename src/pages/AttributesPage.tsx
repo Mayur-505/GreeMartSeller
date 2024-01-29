@@ -11,7 +11,7 @@ import cancellIcon from "@/assets/Icons/cancellIcon.svg";
 import searchIcon from "@/assets/Icons/searchIcon.svg";
 import querIcon from "@/assets/Icons/querIcon.svg";
 import texIcon from "@/assets/Icons/texIcon.svg";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactQuill from "react-quill";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/table";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ChromePicker } from "react-color";
 import {
   Command,
   CommandEmpty,
@@ -55,6 +56,30 @@ const AttributesPage = () => {
   const [save, setSave] = useState(false);
   const [feature, setFeature] = useState(false);
   const [value, setValue] = useState("");
+  const [color, setColor] = useState("#ffffff");
+  const [showPicker, setShowPicker] = useState(false);
+  const divRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (divRef.current && !divRef.current.contains(event.target)) {
+      setShowPicker(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleColorChange = (newColor) => {
+    setColor(newColor.hex);
+  };
+
+  const togglePicker = () => {
+    setShowPicker(!showPicker);
+  };
+
   const invoices = [
     {
       invoice: "INV001",
@@ -190,12 +215,29 @@ const AttributesPage = () => {
                 <span className="text-[#DB3700]">*</span> Color
               </Label>
               <div className="max-w-[402px] w-full flex relative">
-                <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
+                <Input
+                  className="bg-[#F9F9F9] w-full border-[#00000033]"
+                  value={color}
+                />
                 <img
                   src={ColorIcon}
                   alt="ColorIcon"
                   className="absolute right-0"
+                  onClick={togglePicker}
                 />
+                {showPicker && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      zIndex: "2",
+                      right: "0",
+                      top: "42px",
+                    }}
+                    ref={divRef}
+                  >
+                    <ChromePicker color={color} onChange={handleColorChange} />
+                  </div>
+                )}
               </div>
             </div>
             <div className="flex gap-[30px] mt-[30px]">
@@ -203,7 +245,10 @@ const AttributesPage = () => {
                 Texture
               </Label>
               <div className="max-w-[402px] w-full flex relative">
-                <Input className="bg-[#EEE] w-full border-[#00000033]" />
+                <Input
+                  className="bg-[#EEE] pl-[50px] w-full border-[#00000033]"
+                  type="file"
+                />
                 <img src={FileIcon} alt="ColorIcon" className="absolute" />
                 <div className="flex items-center absolute right-0 rounded-[5px] bg-[#F5F8F9] border border-[#00000033] py-[7px] px-[13px]">
                   <img src={FolderIcon} alt="FolderIcon" className="mr-[5px]" />
