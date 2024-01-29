@@ -130,7 +130,7 @@ const AttributesPage = () => {
           value="Basicsettings"
           className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
         >
-          <div className="py-[7px] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
+          <div className="py-[7px] pl-[20px] font-medium text-[18px] font-Poppins text-[#000000CC] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
             <img src={blockUdgarIcon} alt="blockUdgarIcon" />
             Values
           </div>
@@ -218,6 +218,7 @@ const AttributesPage = () => {
                 <Input
                   className="bg-[#F9F9F9] w-full border-[#00000033]"
                   value={color}
+                  readOnly
                 />
                 <img
                   src={ColorIcon}
@@ -295,7 +296,7 @@ const AttributesPage = () => {
           value="Basicsettings"
           className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
         >
-          <div className="py-[7px] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
+          <div className="py-[7px] pl-[20px] flex items-center font-medium text-[18px] font-Poppins text-[#000000CC] gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
             <img src={blockUdgarIcon} alt="blockUdgarIcon" />
             Attributes
           </div>
@@ -448,7 +449,7 @@ const AttributesPage = () => {
           value="Features"
           className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
         >
-          <div className="py-[7px] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
+          <div className="py-[7px] pl-[20px] font-medium text-[18px] font-Poppins text-[#000000CC] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
             <img src={blockUdgarIcon} alt="blockUdgarIcon" />
             Feature value
           </div>
@@ -555,7 +556,7 @@ const AttributesPage = () => {
           value="Features"
           className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
         >
-          <div className="py-[7px] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
+          <div className="py-[7px] font-medium text-[18px] font-Poppins text-[#000000CC] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
             <img src={blockUdgarIcon} alt="blockUdgarIcon" />
             Features
           </div>

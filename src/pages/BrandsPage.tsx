@@ -1,5 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import blockUdgarIcon from "@/assets/Icons/blockUdgarIcon.svg";
+import blockUdgarIcon from "@/assets/Icons/brandIcon.svg";
+import blockSuppliersIcon from "@/assets/Icons/suppliers.svg";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import { Button } from "@/components/ui/button";
@@ -65,19 +66,19 @@ const BrandsPage = () => {
         value="Brands"
         className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
       >
-        <div className="py-[7px] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
+        <div className="py-[7px] pl-[20px] text-[#454D4A] flex font-semibold text-[24px] font-Poppins items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
           <img src={blockUdgarIcon} alt="blockUdgarIcon" />
           Brands
         </div>
         <div className="mt-[58px]">
           <div className="flex gap-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *Name
+              <span className="text-[#DB3700]">*</span> Name
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px] border-[#00000033]">
-                Invalid characters:{" "}
+                {"invalid characters: <>;=#{}"}
               </p>
             </div>
           </div>
@@ -102,12 +103,13 @@ const BrandsPage = () => {
               Logo
             </Label>
             <div className="max-w-[883px] w-full">
-              <div className="flex">
+              <div className="flex relative">
                 <Input
                   className="bg-[#F9F9F9] w-full font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px] border-[#00000033]"
                   placeholder="Choose file(s)"
+                  type="file"
                 />
-                <Button className="rounded-ss-none rounded-es-none px-[24px] font-Poppins text-[16px] font-[400] leading-[normal] tracking-[0.32px]">
+                <Button className="rounded-ss-none rounded-es-none px-[24px] right-0 font-Poppins text-[16px] font-[400] leading-[normal] tracking-[0.32px] absolute">
                   Browse
                 </Button>
               </div>
@@ -122,7 +124,7 @@ const BrandsPage = () => {
             </Label>
             <div className="max-w-[883px] w-full">
               <div className="max-w-[883px] w-full flex gap-[10px]">
-                <Textarea className="bg-[#F9F9F9] w-full font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px] border-[#00000033]" />
+                <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
                 <Popover open={open} onOpenChange={setOpen}>
                   <PopoverTrigger asChild>
                     <Button
@@ -170,6 +172,9 @@ const BrandsPage = () => {
                   </PopoverContent>
                 </Popover>
               </div>
+              <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#566166B2] pt-[5px]">
+                {"invalid characters:<>={}"}
+              </p>
             </div>
           </div>
 
@@ -227,6 +232,9 @@ const BrandsPage = () => {
                   </PopoverContent>
                 </Popover>
               </div>
+              <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#566166B2] pt-[5px]">
+                {"invalid characters:<>={}"}
+              </p>
             </div>
           </div>
 
@@ -286,7 +294,7 @@ const BrandsPage = () => {
               </div>
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#566166B2] pt-[5px]">
                 To add tags, click in the field, write something, and then press
-                the “Enter” key. <br /> invalid characters
+                the “Enter” key. <br /> {"invalid characters:<>={}"}
               </p>
             </div>
           </div>
@@ -295,7 +303,7 @@ const BrandsPage = () => {
               Enabled
             </Label>
             <div className="max-w-[883px] flex gap-[10px] w-full items-center">
-              <Switch />
+              <Switch className="" />
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#566166B2] pt-[5px]">
                 Yes
               </p>
@@ -323,9 +331,9 @@ const BrandsPage = () => {
         value="address"
         className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
       >
-        <div className="py-[7px] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
-          <img src={blockUdgarIcon} alt="blockUdgarIcon" />
-          Brands Address
+        <div className="py-[7px] pl-[20px] text-[#454D4A] flex items-center gap-[10px] font-semibold text-[24px] font-Poppins bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
+          {/* <img src={blockUdgarIcon} alt="blockUdgarIcon" /> */}
+          Addresses
         </div>
         <div className="mt-[58px]">
           <div className="flex gap-[30px] mt-[30px]">
@@ -338,29 +346,29 @@ const BrandsPage = () => {
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *First name
+              <span className="text-[#DB3700]">*</span> First name
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px] border-[#00000033]">
-                Invalid characters:{" "}
+                {"invalid characters:<>={}@#”{}_$%:"}
               </p>
             </div>
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *Last name
+              <span className="text-[#DB3700]">*</span> Last name
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px] border-[#00000033]">
-                Invalid characters:{" "}
+                {"invalid characters:<>={}@#”{}_$%:"}
               </p>
             </div>
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *Address
+              <span className="text-[#DB3700]">*</span> Address
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
@@ -384,7 +392,7 @@ const BrandsPage = () => {
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *Country
+              <span className="text-[#DB3700]">*</span> Country
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
@@ -392,7 +400,7 @@ const BrandsPage = () => {
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *State
+              <span className="text-[#DB3700]">*</span> State
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
@@ -429,7 +437,7 @@ const BrandsPage = () => {
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px] border-[#00000033]">
-                Invalid characters:{" "}
+                {"invalid characters:<>={}"}
               </p>
             </div>
           </div>
@@ -456,19 +464,19 @@ const BrandsPage = () => {
         value="Suppliers"
         className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
       >
-        <div className="py-[7px] pl-[20px] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
-          <img src={blockUdgarIcon} alt="blockUdgarIcon" />
+        <div className="py-[7px] pl-[20px] flex font-semibold text-[24px] font-Poppins text-[#454D4A] items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
+          <img src={blockSuppliersIcon} alt="blockSuppliersIcon" />
           Suppliers
         </div>
         <div className="mt-[58px]">
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *Name
+              <span className="text-[#DB3700]">*</span> Name
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px] border-[#00000033]">
-                Invalid characters:{" "}
+                {"invalid characters:<>;=#{}"}
               </p>
             </div>
           </div>
@@ -479,7 +487,7 @@ const BrandsPage = () => {
             <div className="max-w-[883px] w-full">
               <ReactQuill theme="snow" value={value} onChange={setValue} />
               <p className="font-Poppins text-end text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px] border-[#00000033]">
-                Invalid characters:{" "}
+                0 of 12850 characters allowed
               </p>
             </div>
           </div>
@@ -493,7 +501,7 @@ const BrandsPage = () => {
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *Address
+              <span className="text-[#DB3700]">*</span> Address
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
@@ -517,7 +525,7 @@ const BrandsPage = () => {
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *Country
+              <span className="text-[#DB3700]">*</span> Country
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
@@ -525,7 +533,7 @@ const BrandsPage = () => {
           </div>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-              *State
+              <span className="text-[#DB3700]">*</span> State
             </Label>
             <div className="max-w-[883px] w-full">
               <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
@@ -564,6 +572,7 @@ const BrandsPage = () => {
                 <Input
                   className="bg-[#F9F9F9] w-full font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px] border-[#00000033]"
                   placeholder="Choose file(s)"
+                  type="file"
                 />
                 <Button className="rounded-ss-none rounded-es-none px-[24px] font-Poppins text-[16px] font-[400] leading-[normal] tracking-[0.32px]">
                   Browse
@@ -744,7 +753,7 @@ const BrandsPage = () => {
               </div>
               <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#566166B2] pt-[5px]">
                 To add tags, click in the field, write something, and then press
-                the “Enter” key. <br /> invalid characters
+                the “Enter” key. <br /> {"invalid characters:<>={}"}
               </p>
             </div>
           </div>

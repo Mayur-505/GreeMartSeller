@@ -461,29 +461,29 @@ const AddProducts = () => {
               Behavior when out of stock
             </p>
             <div className="mt-[15px]">
-              <RadioGroup defaultValue="comfortable">
+              <RadioGroup defaultValue="default">
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="comfortable" id="r2" />
+                  <RadioGroupItem value="default" id="r1" />
                   <Label
-                    htmlFor="r2"
+                    htmlFor="r1"
                     className="font-Poppins text-[15px] font-[500] leading-[normal] tracking-[0.225px] text-[#00000080]"
                   >
                     Deny orders
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="default" id="r1" />
+                  <RadioGroupItem value="Allow" id="r2" />
                   <Label
-                    htmlFor="r1"
+                    htmlFor="r2"
                     className="font-Poppins text-[15px] font-[500] leading-[normal] tracking-[0.225px] text-[#00000080]"
                   >
                     Allow orders
                   </Label>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="default" id="r1" />
+                  <RadioGroupItem value="behavior" id="r3" />
                   <Label
-                    htmlFor="r1"
+                    htmlFor="r3"
                     className="font-Poppins text-[15px] font-[500] leading-[normal] tracking-[0.225px] text-[#00000080]"
                   >
                     Use default behavior (Deny orders)
@@ -1160,7 +1160,7 @@ const AddProducts = () => {
                         htmlFor="terms"
                         className="font-Poppins text-[14px] font-[500] leading-[normal] tracking-[0.21px] text-[#00000080]"
                       >
-                        Available for order
+                        Accessories Supplier
                       </label>
                     </div>
                   </TableCell>

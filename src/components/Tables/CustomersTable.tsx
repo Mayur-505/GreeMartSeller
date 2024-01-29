@@ -62,9 +62,9 @@ const CustomersTable = (props: { invoices: InvoicesObject[] }) => {
             </TableCell>
             <TableCell className="font-Poppins font-[500] text-[18px] py-[6px] tracking-[0.592px] leading-[normal]">
               <p
-                className={`py-[3px] px-[16px] text-[#000000B2] ${
+                className={`py-[3px] px-[16px] text-[#000000B2] rounded-[5px] ${
                   invoice.status === "Active"
-                    ? "bg-[#D1DDF4]"
+                    ? "bg-[#F4F3D1]"
                     : invoice.status === "Passive"
                     ? "bg-[#E7D1F4]"
                     : "bg-[#FC222240]"
