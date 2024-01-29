@@ -52,7 +52,7 @@ import {
 
 const AttributesPage = () => {
   const [open, setOpen] = useState(false);
-  const [tabs, setTabs] = useState("Basicsettings");
+  const [tabs, setTabs] = useState("Attributes");
   const [save, setSave] = useState(false);
   const [feature, setFeature] = useState(false);
   const [value, setValue] = useState("");
@@ -102,15 +102,15 @@ const AttributesPage = () => {
   ];
   return (
     <Tabs
-      defaultValue="Basicsettings"
+      defaultValue="Attributes"
       className="w-full mt-[32px] pl-[40px] pr-[60px]"
     >
       <TabsList className="w-full bg-transparent p-0 justify-start">
         <TabsTrigger
-          value="Basicsettings"
-          onClick={() => setTabs("Basicsettings")}
+          value="Attributes"
+          onClick={() => setTabs("Attributes")}
           className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
-            tabs == "Basicsettings" && "border-t-[3px] border-[#17AEC9]"
+            tabs == "Attributes" && "border-t-[3px] border-[#17AEC9]"
           }`}
         >
           Attributes
@@ -127,7 +127,7 @@ const AttributesPage = () => {
       </TabsList>
       {!save && (
         <TabsContent
-          value="Basicsettings"
+          value="Attributes"
           className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
         >
           <div className="py-[7px] pl-[20px] font-medium text-[18px] font-Poppins text-[#000000CC] flex items-center gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">
@@ -293,7 +293,7 @@ const AttributesPage = () => {
       )}
       {save && (
         <TabsContent
-          value="Basicsettings"
+          value="Attributes"
           className="bg-[#FFF] mt-[7px] relative z-10 pb-[100px]"
         >
           <div className="py-[7px] pl-[20px] flex items-center font-medium text-[18px] font-Poppins text-[#000000CC] gap-[10px] bg-[#FAFBFC] border-[1px] border-solid border-[#0000001A]">

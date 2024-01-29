@@ -27,6 +27,7 @@ import { Switch } from "@/components/ui/switch";
 const BrandsPage = () => {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
+  const [tabs, setTabs] = useState("Brands");
   const frameworks = [
     {
       value: "en",
@@ -45,19 +46,28 @@ const BrandsPage = () => {
       <TabsList className="w-full bg-transparent p-0 justify-start">
         <TabsTrigger
           value="Brands"
-          className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+          onClick={() => setTabs("Brands")}
+          className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+            tabs == "Brands" && "border-t-[3px] border-[#17AEC9]"
+          }`}
         >
           Brands
         </TabsTrigger>
         <TabsTrigger
           value="address"
-          className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+          onClick={() => setTabs("address")}
+          className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+            tabs == "address" && "border-t-[3px] border-[#17AEC9]"
+          }`}
         >
           Brands Address
         </TabsTrigger>
         <TabsTrigger
           value="Suppliers"
-          className="rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px]  leading-[normal] font-[500] tracking-[0.17px]"
+          onClick={() => setTabs("Suppliers")}
+          className={`rounded-none border-t-[3px] border-solid border-transparent px-[20px] py-[15px] font-Poppins w-fit text-[17px] leading-[normal] font-[500] tracking-[0.17px] ${
+            tabs == "Suppliers" && "border-t-[3px] border-[#17AEC9]"
+          }`}
         >
           Suppliers
         </TabsTrigger>
