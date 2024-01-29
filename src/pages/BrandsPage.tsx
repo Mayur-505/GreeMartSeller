@@ -182,60 +182,58 @@ const BrandsPage = () => {
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
               Meta description
             </Label>
-            <div className="max-w-[883px] w-full">
-              <div className="max-w-[883px] w-full flex gap-[10px]">
-                <Textarea className="bg-[#F9F9F9] w-full font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px] border-[#00000033]" />
-                <Popover open={open} onOpenChange={setOpen}>
-                  <PopoverTrigger asChild>
-                    <Button
-                      variant="outline"
-                      aria-expanded={open}
-                      className="max-w-[65px] text-[14px] text-[#000000B2] font-Poppins font-[400] leading-[normal] tracking-[0.28px] justify-between border-[#00000033]"
-                    >
-                      {value
-                        ? frameworks.find(
-                            (framework) => framework.value === value
-                          )?.label
-                        : "en"}
-                      <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                    </Button>
-                  </PopoverTrigger>
-                  <PopoverContent className="w-[200px] p-0">
-                    <Command>
-                      <CommandInput placeholder="Search framework..." />
-                      <CommandEmpty>No framework found.</CommandEmpty>
-                      <CommandGroup>
-                        {frameworks.map((framework) => (
-                          <CommandItem
-                            key={framework.value}
-                            value={framework.value}
-                            onSelect={(currentValue) => {
-                              setValue(
-                                currentValue === value ? "" : currentValue
-                              );
-                              setOpen(false);
-                            }}
-                          >
-                            <Check
-                              className={cn(
-                                "mr-2 h-4 w-4",
-                                value === framework.value
-                                  ? "opacity-100"
-                                  : "opacity-0"
-                              )}
-                            />
-                            {framework.label}
-                          </CommandItem>
-                        ))}
-                      </CommandGroup>
-                    </Command>
-                  </PopoverContent>
-                </Popover>
-              </div>
-              <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#566166B2] pt-[5px]">
-                {"invalid characters:<>={}"}
-              </p>
+            <div className="max-w-[883px] w-full flex gap-[10px]">
+              <Textarea className="bg-[#F9F9F9] w-full font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px] border-[#00000033]" />
+              <Popover open={open} onOpenChange={setOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    aria-expanded={open}
+                    className="max-w-[65px] text-[14px] text-[#000000B2] font-Poppins font-[400] leading-[normal] tracking-[0.28px] justify-between border-[#00000033]"
+                  >
+                    {value
+                      ? frameworks.find(
+                          (framework) => framework.value === value
+                        )?.label
+                      : "en"}
+                    <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-[200px] p-0">
+                  <Command>
+                    <CommandInput placeholder="Search framework..." />
+                    <CommandEmpty>No framework found.</CommandEmpty>
+                    <CommandGroup>
+                      {frameworks.map((framework) => (
+                        <CommandItem
+                          key={framework.value}
+                          value={framework.value}
+                          onSelect={(currentValue) => {
+                            setValue(
+                              currentValue === value ? "" : currentValue
+                            );
+                            setOpen(false);
+                          }}
+                        >
+                          <Check
+                            className={cn(
+                              "mr-2 h-4 w-4",
+                              value === framework.value
+                                ? "opacity-100"
+                                : "opacity-0"
+                            )}
+                          />
+                          {framework.label}
+                        </CommandItem>
+                      ))}
+                    </CommandGroup>
+                  </Command>
+                </PopoverContent>
+              </Popover>
             </div>
+            <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#566166B2] pt-[5px]">
+              {"invalid characters:<>={}"}
+            </p>
           </div>
 
           <div className="flex gap-[30px] mt-[30px]">
