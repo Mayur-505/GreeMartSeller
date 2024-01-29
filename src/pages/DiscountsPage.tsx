@@ -8,9 +8,7 @@ import ReactQuill from "react-quill";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Check, ChevronsUpDown } from "lucide-react";
-import blockSuppliersIcon from "@/assets/Icons/suppliers.svg";
 
 import { cn } from "@/lib/utils";
 import {
@@ -95,18 +93,61 @@ const DiscountsPage = () => {
               className="bg-[#FFF] relative z-10 border-[1px] border-[#00000033] border-solid py-[40px]"
             >
               <div className="flex gap-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] text-[#000000CC] font-[400] leading-[normal] tracking-[0.34px]">
                   <span className="text-[#DB3700]">*</span> Name
                 </Label>
-                <div className="max-w-[883px] w-full">
+                <div className="max-w-[883px] w-full flex gap-[10px]">
                   <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
-                  <p className="font-Poppins text-[12px] font-[400] leading-[normal] tracking-[0.24px] text-[#00000080] pt-[5px] border-[#00000033]">
-                    {"invalid characters: <>;=#{}"}
-                  </p>
+                  <Popover open={open} onOpenChange={setOpen}>
+                    <PopoverTrigger asChild>
+                      <Button
+                        variant="outline"
+                        aria-expanded={open}
+                        className="max-w-[65px] text-[14px] text-[#000000B2] font-Poppins font-[400] leading-[normal] tracking-[0.28px] justify-between border-[#00000033]"
+                      >
+                        {value
+                          ? frameworks.find(
+                              (framework) => framework.value === value
+                            )?.label
+                          : "en"}
+                        <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                      </Button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[200px] p-0">
+                      <Command>
+                        <CommandInput placeholder="Search framework..." />
+                        <CommandEmpty>No framework found.</CommandEmpty>
+                        <CommandGroup>
+                          {frameworks.map((framework) => (
+                            <CommandItem
+                              key={framework.value}
+                              value={framework.value}
+                              onSelect={(currentValue) => {
+                                setValue(
+                                  currentValue === value ? "" : currentValue
+                                );
+                                setOpen(false);
+                              }}
+                            >
+                              <Check
+                                className={cn(
+                                  "mr-2 h-4 w-4",
+                                  value === framework.value
+                                    ? "opacity-100"
+                                    : "opacity-0"
+                                )}
+                              />
+                              {framework.label}
+                            </CommandItem>
+                          ))}
+                        </CommandGroup>
+                      </Command>
+                    </PopoverContent>
+                  </Popover>
                 </div>
               </div>
               <div className="flex gap-[30px] mt-[30px]">
-                <Label className="flex items-start gap-[10px] justify-end w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="flex items-start text-[#000000CC] gap-[10px] justify-end w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Description
                 </Label>
                 <div className="max-w-[883px] w-full">
@@ -114,7 +155,7 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex items-center gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block w-[300px] text-[#000000CC] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Partial use
                 </Label>
                 <div className="max-w-[883px] flex gap-[10px] w-full items-center">
@@ -125,15 +166,15 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-                  Mobile phone
+                <Label className="block w-[300px] text-[#000000CC] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                  Priority
                 </Label>
                 <div className="max-w-[137px] w-full">
                   <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
                 </div>
               </div>
               <div className="flex items-center gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block w-[300px] text-[#000000CC] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Enabled
                 </Label>
                 <div className="max-w-[883px] flex gap-[10px] w-full items-center">
@@ -149,9 +190,8 @@ const DiscountsPage = () => {
               className="bg-[#FFF] relative z-10 border-[1px] border-[#00000033] border-solid py-[40px]"
             >
               <div className="flex gap-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-                  <span className="text-[#DB3700]">*</span> Limit to a single
-                  customer
+                <Label className="block w-[300px] text-[#000000CC] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                  Limit to a single customer
                 </Label>
                 <div className="max-w-[883px] w-full flex relative">
                   <img
@@ -168,8 +208,8 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-                  <span className="text-[#DB3700]">*</span> Valid
+                <Label className="block w-[300px] text-[#000000CC] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                  Valid
                 </Label>
                 <div className="max-w-[883px] w-full gap-[18px] flex">
                   <div className="w-[50%] relative">
@@ -197,8 +237,8 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
-                  <span className="text-[#DB3700]">*</span> Minimum amount
+                <Label className="block w-[300px] text-[#000000CC] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                  Minimum amount
                 </Label>
                 <div className="max-w-[883px] w-full gap-[18px] flex">
                   <div className="max-w-[130px] w-full">
@@ -345,14 +385,14 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block text-[#000000CC] w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Total available
                 </Label>
                 <div className="max-w-[883px] w-full">
                   <Input className="bg-[#F9F9F9] w-full border-[#00000033]" />
                 </div>
               </div>
-              <div className="flex gap-[30px] mt-[30px]">
+              <div className="flex gap-[30px] text-[#000000CC] mt-[30px]">
                 <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Total available for each user
                 </Label>
@@ -361,25 +401,25 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block text-[#000000CC] w-[300px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Restrictions
                 </Label>
                 <div className="max-w-[883px] flex flex-col gap-[14px] w-full">
                   <div className="flex gap-[10px] items-center">
                     <Checkbox />{" "}
-                    <p className="font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
+                    <p className="font-Poppins text-[#000000B2] text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
                       Country selection
                     </p>
                   </div>
                   <div className="flex gap-[10px] items-center">
                     <Checkbox />{" "}
-                    <p className="font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
+                    <p className="font-Poppins text-[#000000B2] text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
                       Carrier selection
                     </p>
                   </div>
                   <div className="flex gap-[10px] items-center">
                     <Checkbox />{" "}
-                    <p className="font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
+                    <p className="font-Poppins text-[#000000B2] text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
                       Customer group selection
                     </p>
                   </div>
@@ -391,7 +431,7 @@ const DiscountsPage = () => {
               className="bg-[#FFF]  relative z-10 border-[1px] border-[#00000033] border-solid py-[40px]"
             >
               <div className="flex items-center gap-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block w-[300px] mt-[7px] text-right text-[#000000B2] font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Free shipping
                 </Label>
                 <div className="max-w-[883px] flex gap-[10px] w-full items-center">
@@ -402,33 +442,36 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block text-[#000000B2] w-[300px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Apply a discount
                 </Label>
                 <div className="max-w-[883px] flex flex-col gap-[14px] w-full">
                   <div className="flex gap-[10px] items-center">
                     <input type="radio" />{" "}
-                    <p className="font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
+                    <p className="font-Poppins text-[14px] font-[400] leading-[normal] text-[#00000080] tracking-[0.28px]">
                       Percent (%)
                     </p>
                   </div>
                   <div className="flex gap-[10px] items-center">
                     <input type="radio" />{" "}
-                    <p className="font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
+                    <p className="font-Poppins text-[14px] text-[#00000080] font-[400] leading-[normal] tracking-[0.28px]">
                       Amount
                     </p>
                   </div>
                   <div className="flex gap-[10px] items-center">
                     <input type="radio" />{" "}
-                    <p className="font-Poppins text-[14px] font-[400] leading-[normal] tracking-[0.28px]">
-                      X None
+                    <p className="font-Poppins text-[14px] text-[#00000080] font-[400] leading-[normal] tracking-[0.28px]">
+                      <span className="text-[#FF000080] text-[14px] font-Poppins font-[800]">
+                        X
+                      </span>{" "}
+                      None
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="flex items-center gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block text-[#000000B2] w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Exclude discounted products
                 </Label>
                 <div className="max-w-[883px] flex gap-[10px] w-full items-center">
@@ -439,7 +482,7 @@ const DiscountsPage = () => {
                 </div>
               </div>
               <div className="flex items-center gap-[30px] mt-[30px]">
-                <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
+                <Label className="block text-[#000000B2] w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]">
                   Send a free gift
                 </Label>
                 <div className="max-w-[883px] flex gap-[10px] w-full items-center">
