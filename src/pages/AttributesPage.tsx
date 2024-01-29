@@ -103,7 +103,7 @@ const AttributesPage = () => {
   return (
     <Tabs
       defaultValue="Attributes"
-      className="w-full mt-[32px] pl-[40px] pr-[60px]"
+      className="w-full pt-[32px] pl-[40px] pr-[60px] h-[calc(100vh-98px)] overflow-y-auto"
     >
       <TabsList className="w-full bg-transparent p-0 justify-start">
         <TabsTrigger

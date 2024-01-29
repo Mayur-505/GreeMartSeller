@@ -72,7 +72,7 @@ const CustomerPage = () => {
   ];
   return (
     <div className="py-[50px] pl-[40px] pr-[80px] h-[calc(100vh-98px)] overflow-y-auto">
-      <div className="shadow-boxdropshadow pt-[25px] pb-[45px] rounded-[10px]">
+      <div className="shadow-boxdropshadow pt-[25px] pb-[45px] rounded-[10px] bg-[#FFF]">
         <div className="px-[50px] border-b-[1px] border-solid border-[#C0C0C0] pb-[19px]">
           <div className="flex justify-between items-center">
             <h2 className="font-Poppins font-[600] text-[22px] text-[#454D4A] tracking-[0.24px] leading-[normal]">

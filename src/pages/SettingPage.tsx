@@ -11,7 +11,7 @@ const SettingPage = () => {
           Settings
         </h2>
       </div>
-      <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px]">
+      <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px] bg-[#FFF]">
         <div className="flex items-center gap-[79px]">
           <div className="w-[50%]">
             <Label
@@ -128,7 +128,7 @@ const SettingPage = () => {
           </Button>
         </div>
       </div>
-      <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px] mt-[30px]">
+      <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px] mt-[30px] bg-[#FFF]">
         <div className="flex items-center gap-[79px]">
           <div className="w-[50%]">
             <Label
@@ -191,7 +191,7 @@ const SettingPage = () => {
           </Button>
         </div>
       </div>
-      <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px] mt-[60px]">
+      <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px] mt-[60px] bg-[#FFF]">
         <div className="flex items-center gap-[79px] pt-[20px]">
           <div className="max-w-[50%] w-full">
             <Label

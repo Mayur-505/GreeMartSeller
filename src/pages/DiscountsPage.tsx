@@ -43,7 +43,7 @@ const DiscountsPage = () => {
     <>
       <Tabs
         defaultValue="Brands"
-        className="w-full mt-[32px] pl-[40px] pr-[60px]"
+        className="w-full pt-[32px] pl-[40px] pr-[60px] h-[calc(100vh-98px)] overflow-y-auto"
       >
         <TabsList className="w-full bg-transparent p-0 justify-start">
           <TabsTrigger
@@ -496,7 +496,7 @@ const DiscountsPage = () => {
           </Tabs>
           <div className="flex gap-[30px] mt-[30px]">
             <Label className="block w-[300px] mt-[7px] text-right font-Poppins text-[17px] font-[400] leading-[normal] tracking-[0.34px]"></Label>
-            <div className="max-w-[883px] w-full">
+            <div className="px-[40px] w-full">
               <div className="flex gap-[20px] mt-[50px] justify-end">
                 <Button
                   variant={"outline"}

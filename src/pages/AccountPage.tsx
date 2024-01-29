@@ -61,7 +61,7 @@ const AccountPage = () => {
           Account
         </h2>
       </div>
-      <div className="shadow-boxdropshadow py-[47px] px-[50px] rounded-[10px] max-w-[720px] w-full">
+      <div className="shadow-boxdropshadow py-[47px] px-[50px] rounded-[10px] max-w-[720px] w-full bg-[#FFF]">
         <div className="flex items-center mb-[30px]">
           <div className="relative">
             <img src={UserIcon} alt="UserIcon" />

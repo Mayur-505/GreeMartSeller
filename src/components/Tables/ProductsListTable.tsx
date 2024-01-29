@@ -27,7 +27,7 @@ interface InvoicesObject {
 
 const ProductsListTable = (props: { invoices: InvoicesObject[] }) => {
   return (
-    <Table className="border-[1px] border-solid boredr-[#00000026]">
+    <Table className="border-[1px] border-solid boredr-[#00000026] bg-[#FFF]">
       <TableHeader>
         <TableRow className="bg-primary hover:bg-primary uppercase">
           <TableHead className="font-Poppins font-[500] text-[20px] flex items-center text-[#FFF] tracking-[0.592px] leading-[normal]">
