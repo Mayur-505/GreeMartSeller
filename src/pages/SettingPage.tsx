@@ -41,7 +41,7 @@ const SettingPage = () => {
         </h2>
       </div>
       <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px] bg-[#FFF]">
-        <div className="max-w-[658px] w-full border border-[#0000001A] rounded-[5px] py-[22px] px-[20px]">
+        {/* <div className="max-w-[658px] w-full border border-[#0000001A] rounded-[5px] py-[22px] px-[20px]">
           <div className="flex justify-between border-b-[1px] border-dashed border-[#0000001A] pb-[22px]">
             <h3 className="text-[#000000B2] font-Poppins text-[17px] font-[500]">
               Track Order
@@ -69,7 +69,7 @@ const SettingPage = () => {
               </Stepper>
             </Box>
           </div>
-        </div>
+        </div> */}
         <div className="flex items-center gap-[79px]">
           <div className="w-[50%]">
             <Label

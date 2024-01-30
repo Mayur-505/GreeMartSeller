@@ -27,8 +27,7 @@ const steps = [
 ];
 
 const VerifyGst = () => {
-  const [active, setAactive] = useState(4);
-  console.log(setAactive(1));
+  const [active, setAactive] = useState(0);
 
   return (
     <>
@@ -37,9 +36,12 @@ const VerifyGst = () => {
           <div className="px-[300px] verify_stepper pb-[20px] pt-[30px]">
             <Box sx={{ width: "100%" }}>
               <Stepper activeStep={active} alternativeLabel>
-                {steps.map((label) => (
+                {steps?.map((label, index) => (
                   <Step key={label}>
-                    <StepLabel className="font-Poppins text-[16px] font-[400] leading-[normal] text-[#263238]">
+                    <StepLabel
+                      className="font-Poppins text-[16px] font-[400] leading-[normal] text-[#263238]"
+                      onClick={() => setAactive(index)}
+                    >
                       {label}
                     </StepLabel>
                   </Step>
@@ -68,7 +70,7 @@ const VerifyGst = () => {
             <h3 className="text-[16px] text-[#263238] font-Poppins font-[600] leading-[normal] tracking-[0.16px] pb-[18px]">
               Review your GST details
             </h3>
-            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] px-[30px]">
+            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] px-[30px] bg-[#FFF]">
               <div className="border-b-[1px] py-[25px] border-solid border-[#00000026] flex items-center gap-[18px]">
                 <img src={ProfileLogo} alt="ProfileLogo" />
                 <div>
@@ -212,7 +214,7 @@ const VerifyGst = () => {
             </h4>
           </div>
           <div className="mt-[40px]">
-            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] px-[30px]">
+            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] px-[30px] bg-[#FFF]">
               <div className="border-b-[1px] py-[25px] border-solid border-[#00000026] flex items-center gap-[18px]">
                 <div>
                   <h3 className="text-[19px] text-[#263238] font-Poppins font-[500] leading-[normal]">
@@ -275,7 +277,7 @@ const VerifyGst = () => {
             </h4>
           </div>
           <div className="mt-[50px]">
-            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] p-[20px] flex gap-[25px]">
+            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] p-[20px] flex gap-[25px] bg-[#FFF]">
               <div className="pt-[3px]">
                 <input type="radio" className="h-[21px] w-[21px]" />
               </div>
@@ -296,11 +298,11 @@ const VerifyGst = () => {
             </div>
           </div>
           <div className="mt-[25px]">
-            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] py-[25px] px-[20px] flex gap-[25px]">
+            <div className="border-[1px] border-solid border-[#00000066] rounded-[5px] py-[25px] px-[20px] flex gap-[25px] bg-[#FFF]">
               <div className="pt-[3px]">
                 <input type="radio" className="h-[21px] w-[21px]" />
               </div>
-              <div className="w-full">
+              <div className="w-full ">
                 <h3 className="text-[19px] font-[600] leading-[24px] mb-[7px] font-Poppins">
                   Add new pickup address
                 </h3>
@@ -362,7 +364,7 @@ const VerifyGst = () => {
             Select your preferred shipping method.
           </h3>
           <div className="max-w-[505px] w-full">
-            <div className="border-[1px] border-solid border-primary p-[20px] flex gap-[25px]">
+            <div className="border-[1px] border-solid border-primary p-[20px] flex gap-[25px] bg-[#FFF]">
               <div className="pt-[3px]">
                 <input type="radio" className="h-[21px] w-[21px]" />
               </div>
@@ -379,7 +381,7 @@ const VerifyGst = () => {
                 </button>
               </div>
             </div>
-            <div className="border-[1px] border-solid border-[#00000066] p-[20px] flex gap-[25px]">
+            <div className="border-[1px] border-solid border-[#00000066] p-[20px] flex gap-[25px] bg-[#FFF]">
               <div className="pt-[3px]">
                 <input type="radio" className="h-[21px] w-[21px]" />
               </div>
