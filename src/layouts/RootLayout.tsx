@@ -5,7 +5,6 @@ import { Outlet, useLocation } from "react-router-dom";
 
 const RootLayout = () => {
   const loction = useLocation();
-  console.log("loction", loction.pathname);
   return (
     <>
       {loction.pathname.includes("auth") ? (

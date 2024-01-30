@@ -6,8 +6,6 @@ const VerificationCode = () => {
   const inputsRef = useRef<any>([]);
   const [Otp, setOtp] = useState("");
 
-  console.log("Otp", Otp);
-
   useEffect(() => {
     const handleKeyDown = (event: any, index: number) => {
       const inputs = inputsRef.current;

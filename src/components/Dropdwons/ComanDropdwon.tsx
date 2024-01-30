@@ -8,7 +8,6 @@ interface Iprops {
 }
 
 const ComanDropdwon = ({ mapdata, name, icon, cssclss }: Iprops) => {
-  console.log("mapdata", name);
   return (
     <>
       <SaidbarDropdwon

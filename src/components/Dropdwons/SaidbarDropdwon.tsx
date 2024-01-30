@@ -26,7 +26,6 @@ const SaidbarDropdwon: FC<DropdownFilterProps> = ({
 
   const handelSetRoute = (text: any) => {
     setSelectedCategory(text);
-    console.log("text", text);
     if (text == "Category") {
       navigate("/category");
     }
@@ -57,8 +56,6 @@ const SaidbarDropdwon: FC<DropdownFilterProps> = ({
       setOpen(false);
     }
   }, [loction]);
-
-  console.log("selectedCategory", selectedCategory);
 
   return (
     <div className="relative mx-auto w-full text-left">
