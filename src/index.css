@@ -89,9 +89,9 @@
   }
 }
 
-.verify_stepper .MuiSvgIcon-fontSizeMedium {
-  width: 20px;
-  height: 20px;
+.MuiSvgIcon-fontSizeMedium {
+  width: 20px !important;
+  height: 20px !important;
 }
 
 .css-1hv8oq8-MuiStepLabel-label.Mui-active {
