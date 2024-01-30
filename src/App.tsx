@@ -22,6 +22,7 @@ import ForgetPassword from "./components/auth/ForgetPassword";
 import ResetPassword from "./components/auth/ResetPassword";
 import VerificationCode from "./components/auth/VerificationCode";
 import AuthLayout from "./layouts/AuthLayout";
+import OrderDetails from "./pages/OrderDetails";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
       {
         path: "/orderlist",
         element: <OrderListPage />,
+      },
+      {
+        path: "/orderdetail",
+        element: <OrderDetails />,
       },
       {
         path: "/addproduct",
