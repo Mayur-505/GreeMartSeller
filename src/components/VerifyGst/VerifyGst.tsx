@@ -28,6 +28,8 @@ const steps = [
 
 const VerifyGst = () => {
   const [active, setAactive] = useState(4);
+  console.log(setAactive(1));
+
   return (
     <>
       <div className="border-b-[#00000026] border-solid border-[1px]">

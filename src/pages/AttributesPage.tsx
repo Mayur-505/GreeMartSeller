@@ -1,32 +1,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import circlePlus from "@/assets/Icons/circleplus.svg";
-import shoesImage from "@/assets/Images/shoesImage.svg";
-import qustionMartIcon from "@/assets/Icons/qustionMartIcon.svg";
-import UdgarIcon from "@/assets/Icons/UdgarIcon.svg";
 import blockUdgarIcon from "@/assets/Icons/blockUdgarIcon.svg";
 import ColorIcon from "@/assets/Icons/color.svg";
 import FileIcon from "@/assets/Icons/file.svg";
 import FolderIcon from "@/assets/Icons/folder.svg";
-import cancellIcon from "@/assets/Icons/cancellIcon.svg";
-import searchIcon from "@/assets/Icons/searchIcon.svg";
-import querIcon from "@/assets/Icons/querIcon.svg";
-import texIcon from "@/assets/Icons/texIcon.svg";
 import { useEffect, useRef, useState } from "react";
-import ReactQuill from "react-quill";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChromePicker } from "react-color";
@@ -58,9 +38,9 @@ const AttributesPage = () => {
   const [value, setValue] = useState("");
   const [color, setColor] = useState("#ffffff");
   const [showPicker, setShowPicker] = useState(false);
-  const divRef = useRef(null);
+  const divRef = useRef<any>(null);
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = (event: any) => {
     if (divRef.current && !divRef.current.contains(event.target)) {
       setShowPicker(false);
     }
@@ -72,7 +52,7 @@ const AttributesPage = () => {
     };
   }, []);
 
-  const handleColorChange = (newColor) => {
+  const handleColorChange = (newColor: any) => {
     setColor(newColor.hex);
   };
 
@@ -80,16 +60,16 @@ const AttributesPage = () => {
     setShowPicker(!showPicker);
   };
 
-  const invoices = [
-    {
-      invoice: "INV001",
-      paymentStatus: "Paid",
-    },
-    {
-      invoice: "INV002",
-      paymentStatus: "Pending",
-    },
-  ];
+  // const invoices = [
+  //   {
+  //     invoice: "INV001",
+  //     paymentStatus: "Paid",
+  //   },
+  //   {
+  //     invoice: "INV002",
+  //     paymentStatus: "Pending",
+  //   },
+  // ];
   const frameworks = [
     {
       value: "en",

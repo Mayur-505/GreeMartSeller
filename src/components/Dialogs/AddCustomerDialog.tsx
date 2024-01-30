@@ -22,9 +22,6 @@ import { useState } from "react";
 const AddCustomerDialog = () => {
   const [switchValue, setSwitchValue] = useState(false);
 
-  const handalswitchvalue = (e) => {
-    console.log(e);
-  };
   return (
     <Dialog>
       <DialogTrigger asChild>

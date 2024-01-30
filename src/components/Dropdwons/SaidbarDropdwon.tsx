@@ -1,8 +1,6 @@
 import { FC, useState, ReactNode, useEffect } from "react";
 import dropdownarr from "@/assets/Icons/dropdwonArrow.svg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import ComanDropdwon from "./ComanDropdwon";
-import categoryLeftIcon from "@/assets/Icons/category_leftIcon.svg";
 
 interface DropdownFilterProps {
   header: ReactNode;

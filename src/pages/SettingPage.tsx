@@ -2,8 +2,37 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import Box from "@mui/material/Box";
+import Stepper from "@mui/material/Stepper";
+import Step from "@mui/material/Step";
+import StepLabel from "@mui/material/StepLabel";
+import { useState } from "react";
 
 const SettingPage = () => {
+  const [activeStep, setActiveStep] = useState(1);
+
+  const handleStepChange = (step: number) => () => {
+    setActiveStep(step);
+  };
+
+  const steps = [
+    {
+      label: "Order Placed",
+      description: "22 Mar, 2023 - 11:35AM",
+    },
+    {
+      label: "Packed",
+      description: "23 Mar, 2023 - 10:55AM",
+    },
+    {
+      label: "Shipped",
+      description: "23 Mar, 2023 - 03:45AM",
+    },
+    {
+      label: "Delivered",
+      description: "23 Mar, 2023 - 03:45AM",
+    },
+  ];
   return (
     <div className="py-[50px] pl-[40px] pr-[80px] h-[calc(100vh-98px)] overflow-y-auto">
       <div className="pb-[30px]">
@@ -12,6 +41,35 @@ const SettingPage = () => {
         </h2>
       </div>
       <div className="shadow-boxdropshadow py-[30px] px-[50px] rounded-[10px] bg-[#FFF]">
+        <div className="max-w-[658px] w-full border border-[#0000001A] rounded-[5px] py-[22px] px-[20px]">
+          <div className="flex justify-between border-b-[1px] border-dashed border-[#0000001A] pb-[22px]">
+            <h3 className="text-[#000000B2] font-Poppins text-[17px] font-[500]">
+              Track Order
+            </h3>
+            <p className="text-[#00000080] font-Poppins text-[14px] font-[400]">
+              Tracking ID- 
+              <span className="text-[#4D5EFF] text-[12px]">#1004216609</span>
+            </p>
+          </div>
+          <div className="pt-[22px]">
+            <Box sx={{ width: "100%" }}>
+              <Stepper activeStep={activeStep} alternativeLabel>
+                {steps.map((step, index) => (
+                  <Step key={index}>
+                    <StepLabel onClick={handleStepChange(index)}>
+                      <h3 className="font-Poppins text-[14px] font-[500] text-[#00000099]">
+                        {step.label}
+                      </h3>
+                      <p className="font-Poppins text-[12px] font-[300] text-[#00000099]">
+                        {step.description}
+                      </p>
+                    </StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+            </Box>
+          </div>
+        </div>
         <div className="flex items-center gap-[79px]">
           <div className="w-[50%]">
             <Label

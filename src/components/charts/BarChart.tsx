@@ -1,22 +1,21 @@
-import { useRef } from "react";
-import { Line, Bar, Pie } from "react-chartjs-2";
-import ReactDOM from "react-dom";
+import { Bar } from "react-chartjs-2";
 
-const BarChart = (props) => {
-  const LALA = useRef();
+const BarChart = (props: any) => {
   return (
     <div>
       <Bar
         options={{
           tooltips: {
             callbacks: {
-              label: function (tooltipItems, data) {
+              label: function (tooltipItems: any, data: any) {
+                console.log(data);
                 return tooltipItems.yLabel.toString() + "k";
               },
             },
             enabled: true,
 
-            custom: (tooltipModel) => {
+            custom: (tooltipModel: any) => {
+              console.log(tooltipModel);
               // hide the tooltip
             },
           },
@@ -47,7 +46,9 @@ const BarChart = (props) => {
                   stepSize: 100,
                   beginAtZero: true,
                   fontSize: 19,
-                  callback: function (value, index, values) {
+                  callback: function (value: any, index: any, values: any) {
+                    console.log(index);
+                    console.log(values);
                     return value + "k";
                   },
                 },

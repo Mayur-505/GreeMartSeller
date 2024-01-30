@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import searchIcon from "@/assets/Icons/searchIcon.svg";
 import SubCategories from "@/components/Tables/SubCategories";

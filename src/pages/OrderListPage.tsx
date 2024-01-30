@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const OrderListPage = () => {
   const [showinglist, setShowingList] = useState("All Orders");
-  const [invoices, setInvoices] = useState([
+  const invoices = [
     {
       id: "#YU34692",
       customer: "Keegan Wisoky",
@@ -98,7 +98,7 @@ const OrderListPage = () => {
       email: "ma735167@gamil.com",
       status: "New",
     },
-  ]);
+  ];
   const [sendindarray, setsendindarray] = useState(invoices);
 
   useEffect(() => {

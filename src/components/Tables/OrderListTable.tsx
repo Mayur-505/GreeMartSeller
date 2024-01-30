@@ -7,11 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import deleteIcon from "@/assets/Icons/deleteIcon.svg";
-import penIcon from "@/assets/Icons/penIcon.svg";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
-import { Input } from "../ui/input";
 import { Checkbox } from "../ui/checkbox";
 
 interface InvoicesObject {
