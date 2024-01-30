@@ -6,6 +6,8 @@ const VerificationCode = () => {
   const inputsRef = useRef<any>([]);
   const [Otp, setOtp] = useState("");
 
+  console.log("Otp", Otp);
+
   useEffect(() => {
     const handleKeyDown = (event: any, index: number) => {
       const inputs = inputsRef.current;
@@ -38,6 +40,7 @@ const VerificationCode = () => {
         handleKeyDown(event, index)
       );
     });
+
     return () => {
       // Cleanup event listeners when the component unmounts
       inputsRef.current.forEach((input: any, index: number) => {

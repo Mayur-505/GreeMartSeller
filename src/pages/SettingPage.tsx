@@ -2,37 +2,37 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import Box from "@mui/material/Box";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import { useState } from "react";
+// import Box from "@mui/material/Box";
+// import Stepper from "@mui/material/Stepper";
+// import Step from "@mui/material/Step";
+// import StepLabel from "@mui/material/StepLabel";
+// import { useState } from "react";
 
 const SettingPage = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  // const [activeStep, setActiveStep] = useState(1);
 
-  const handleStepChange = (step: number) => () => {
-    setActiveStep(step);
-  };
+  // const handleStepChange = (step: number) => () => {
+  //   setActiveStep(step);
+  // };
 
-  const steps = [
-    {
-      label: "Order Placed",
-      description: "22 Mar, 2023 - 11:35AM",
-    },
-    {
-      label: "Packed",
-      description: "23 Mar, 2023 - 10:55AM",
-    },
-    {
-      label: "Shipped",
-      description: "23 Mar, 2023 - 03:45AM",
-    },
-    {
-      label: "Delivered",
-      description: "23 Mar, 2023 - 03:45AM",
-    },
-  ];
+  // const steps = [
+  //   {
+  //     label: "Order Placed",
+  //     description: "22 Mar, 2023 - 11:35AM",
+  //   },
+  //   {
+  //     label: "Packed",
+  //     description: "23 Mar, 2023 - 10:55AM",
+  //   },
+  //   {
+  //     label: "Shipped",
+  //     description: "23 Mar, 2023 - 03:45AM",
+  //   },
+  //   {
+  //     label: "Delivered",
+  //     description: "23 Mar, 2023 - 03:45AM",
+  //   },
+  // ];
   return (
     <div className="py-[50px] pl-[40px] pr-[80px] h-[calc(100vh-98px)] overflow-y-auto">
       <div className="pb-[30px]">
